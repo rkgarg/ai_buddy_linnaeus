@@ -14,7 +14,7 @@ class OiBuddy
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
     :stay_taxi => [%w( cab taxi ola uber tfs car), %w(order reach book)],
     :stay_breakfast => [%w( breakfast lunch cornflakes menu bread butter food morning complimentary), %w(eat )],
-    :stay_lunch_dinner => [%w(lunch menu dinner price), %w()],
+    :stay_lunch_dinner => [%w(lunch menu dinner price), %w(eat)],
     :stay_nearby_food => [%w(restaurant  zomato food  pizza continental chinese indian), %w(nearby outside order eat )],
     :stay_nearby_travel => [%w( places  tourism   temples park mall), %w(nearby visit travel tourist historic)],
     :stay_extend => [%w( booking extra ), %w(extend stay lengthen)],
