@@ -2,6 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__)) unless $LOAD_PATH.include?(File.dirna
 
 require 'redis'
 require 'stemmer'
+require 'oi_buddy'
 
 # The base class. You won't use this directly - use one of the subclasses.
 class Linnaeus

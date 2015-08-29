@@ -2,6 +2,10 @@
 
 ![Carl Linnaeus](https://raw.github.com/djcp/linnaeus/master/images/linnaeus.jpg)
 
+OI / AI Buddy.
+
+Suggest context based on free text input. Contexts are pre-defined against some keywords. (AI logic is inspired from parent Linnaeus gem)
+
 Linnaeus is a redis-backed naive Bayesian classification system. Please see the [rdoc](http://rubydoc.info/gems/linnaeus/) for more information. Ruby 1.9 is required.
 
 Examples

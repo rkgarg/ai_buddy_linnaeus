@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "images/linnaeus.jpg",
     "lib/linnaeus.rb",
+    "lib/oi_buddy.rb",
     "lib/linnaeus/classifier.rb",
     "lib/linnaeus/persistence.rb",
     "lib/linnaeus/stopwords.rb",
