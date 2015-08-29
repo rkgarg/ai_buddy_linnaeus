@@ -18,21 +18,7 @@ class Linnaeus::Persistence < Linnaeus
 
     @scope = options[:scope]
 
-    if options[:redis_connection]
-      @redis = options[:redis_connection]
-    else
-      @redis = Redis.new(
-        host: options[:redis_host],
-        port: options[:redis_port],
-        db: options[:redis_db],
-        scheme: options[:redis_scheme],
-        path: options[:redis_path],
-        timeout: options[:redis_timeout],
-        password: options[:redis_password],
-        id: options[:redis_id],
-        tcp_keepalive: options[:redis_tcp_keepalive]
-      )
-    end
+    @redis = Redis.new(:url => ENV["REDISCLOUD_URL_DB"])
 
     self
   end
