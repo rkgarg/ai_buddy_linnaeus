@@ -44,7 +44,7 @@ class OiBuddy
 
   def get_context input
     res, matches, total_count = self.classify.classify(input)
-    if matches >= 2 || (matches.to_f/total_count) > 0.5
+    if matches >= 2 || (matches.to_f/total_count) > 0.4
       return {status: 'true', result: res}
     else
       return {status: 'false', response: 'Not enough data. Please try something else'}
