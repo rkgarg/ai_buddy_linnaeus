@@ -71,6 +71,3 @@ class OiBuddy
 
 end
 
-b = OiBuddy.new
-b.feed_data
-
