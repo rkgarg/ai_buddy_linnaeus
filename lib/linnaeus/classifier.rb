@@ -66,8 +66,7 @@ class Linnaeus::Classifier < Linnaeus
 
     scores,matches = classification_scores(text)
     result =  scores.any? ? (scores.sort_by { |a| -a[1] })[0][0] : ''
-    puts scores
-    puts match = result.empty? ? 0 : matches[result]
+    match = result.empty? ? 0 : matches[result]
     return [result, match, cnt]
   end
 

@@ -25,8 +25,8 @@ class OiBuddy
   }
 
   def initialize()
-    self.trainer  = Linnaeus::Trainer.new(scope: "test3")    # Used to train documents
-    self.classify = Linnaeus::Classifier.new(scope: "test3")   # Used to classify documents
+    self.trainer  = ::Linnaeus::Trainer.new(scope: "test3")    # Used to train documents
+    self.classify = ::Linnaeus::Classifier.new(scope: "test3")   # Used to classify documents
   end
 
   def feed_data
