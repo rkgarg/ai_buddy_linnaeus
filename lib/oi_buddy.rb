@@ -16,7 +16,7 @@ class OiBuddy
     :stay_breakfast => [%w(breakfast cornflakes menu bread butter food morning complimentary), %w(eat)],
     :stay_lunch_dinner => [%w(lunch menu dinner buffeet food hungry cafe), %w(eat)],
     :stay_nearby_food => [%w(restaurant zomato online food lunch dinner pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
-    :stay_nearby_travel => [%w(places tourism airport temples park mall amusement park aquarium gallery saloon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
+    :stay_nearby_travel => [%w(places tourism metro rail bus airport train temples park mall amusement park aquarium gallery saloon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
     # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
     :stay_money => [%w(amount money wallet points credits), %w(pay checkout)],
     :stay_weather => [%w(weather rain sunny sunset humit mausam temperature), %w(forecast rainy)],
