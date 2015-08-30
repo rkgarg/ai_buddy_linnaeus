@@ -8,11 +8,11 @@ class OiBuddy
   attr_accessor :trainer, :classify
 
   CONTEXT_MAPS = {
-    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean get service)],
+    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet toiletry bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean get service)],
     :stay_emergency => [%w(police ambulance thief doctor), %w(steal)],
     :stay_laundry => [%w( laundry clothes detergent shirt jeans), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
-    :stay_taxi => [%w( cab taxi ola uber tfs car), %w(ride drop order reach book)],
+    :stay_taxi => [%w( cab taxi ola uber auto tfs car), %w(ride drop order reach book)],
     :stay_breakfast => [%w( breakfast cornflakes menu bread butter food morning complimentary), %w(eat )],
     :stay_lunch_dinner => [%w(lunch menu dinner price), %w(eat)],
     :stay_nearby_food => [%w(restaurant  zomato food  pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
@@ -27,8 +27,8 @@ class OiBuddy
   }
 
   def initialize()
-    self.trainer  = ::Linnaeus::Trainer.new(scope: "test")    # Used to train documents
-    self.classify = ::Linnaeus::Classifier.new(scope: "test")   # Used to classify documents
+    self.trainer  = ::Linnaeus::Trainer.new(scope: "seqtest")    # Used to train documents
+    self.classify = ::Linnaeus::Classifier.new(scope: "seqtest")   # Used to classify documents
   end
 
   def feed_data
