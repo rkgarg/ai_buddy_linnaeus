@@ -8,22 +8,22 @@ class OiBuddy
   attr_accessor :trainer, :classify
 
   CONTEXT_MAPS = {
-    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet toiletry bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean get service)],
-    :stay_emergency => [%w(police ambulance thief doctor), %w(steal)],
-    :stay_laundry => [%w( laundry clothes detergent shirt jeans), %w(clean wash dirty stinky)],
+    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet toiletry bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean services get service)],
+    :stay_emergency => [%w(police emergency fire ambulance thief doctor), %w(steal)],
+    :stay_laundry => [%w( laundry clothes detergent shirt jeans dry clean), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
-    :stay_taxi => [%w( cab taxi ola uber auto tfs car), %w(ride drop order reach book)],
-    :stay_breakfast => [%w( breakfast cornflakes menu bread butter food morning complimentary), %w(eat )],
-    :stay_lunch_dinner => [%w(lunch menu dinner price), %w(eat)],
-    :stay_nearby_food => [%w(restaurant  zomato online food  pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
-    :stay_nearby_travel => [%w( places tourism airport temples park mall bank library museum zoo), %w(nearby visit travel tourist historic)],
+    :stay_taxi => [%w(cab taxi ola uber auto tfs car), %w(ride drop order reach book)],
+    :stay_breakfast => [%w(breakfast cornflakes menu bread butter food morning complimentary), %w(eat )],
+    :stay_lunch_dinner => [%w(lunch menu dinner buffeet food hungry cafe), %w(eat)],
+    :stay_nearby_food => [%w(restaurant zomato online food lunch dinner pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
+    :stay_nearby_travel => [%w(places tourism airport temples park mall amusement park aquarium gallery saloon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
     # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
-    :stay_money => [%w(amount money  wallet  price), %w(pay checkout)],
+    :stay_money => [%w(amount money wallet oyo points credits), %w(pay checkout)],
     :stay_weather => [%w(weather rain sunny sunset temperature), %w(forecast)],
-    :stay_wifi => [%w(internet wifi wi-fi wireless network password username net), %w(connect )],
-    :stay_directions => [%w(location oyo latitude longitude maps), %w(route direction navigate nearest )],
-    :stay_doctor => [%w(doctor practo dentist surgeon hospital appointment clinic labs fever diagnose), %w(book checkup)],
-    :booking_details => [%w(booking stay checkin checkout invoice), %w(detail book)]
+    :stay_wifi => [%w(internet wifi wi-fi wireless network password login credentials creds username net), %w(connect details )],
+    :stay_directions => [%w(location oyo latitude longitude hotel maps), %w(route direction navigate nearest reach find )],
+    :stay_doctor => [%w(doctor practo dentist surgeon hospital health appointment headache pain clinic labs fever sick diagnose), %w(book care checkup)],
+    :booking_details => [%w(booking stay checkin invoice), %w(detail book)]
   }
 
   def initialize()
@@ -72,7 +72,7 @@ class OiBuddy
     syns.concat(get_words_with_weights(resp.delete('noun'),max))
 
     #handle verb
-    max = is_verb ? 5:2
+    max = is_verb ? 4:2
     syns.concat(get_words_with_weights(resp.delete('verb'),max))
 
     resp.each do |k,v|
