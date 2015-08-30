@@ -12,18 +12,18 @@ class OiBuddy
     :stay_emergency => [%w(police emergency fire ambulance thief doctor), %w(steal)],
     :stay_laundry => [%w( laundry clothes detergent shirt jeans dry clean), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
-    :stay_taxi => [%w(cab taxi ola uber auto tfs car), %w(ride drop order reach book)],
-    :stay_breakfast => [%w(breakfast cornflakes menu bread butter food morning complimentary), %w(eat )],
+    :stay_taxi => [%w(cab taxi ola uber auto tfs airport car), %w(ride drop order reach book)],
+    :stay_breakfast => [%w(breakfast cornflakes menu bread butter food morning complimentary), %w(eat)],
     :stay_lunch_dinner => [%w(lunch menu dinner buffeet food hungry cafe), %w(eat)],
     :stay_nearby_food => [%w(restaurant zomato online food lunch dinner pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
     :stay_nearby_travel => [%w(places tourism airport temples park mall amusement park aquarium gallery saloon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
     # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
     :stay_money => [%w(amount money wallet oyo points credits), %w(pay checkout)],
-    :stay_weather => [%w(weather rain sunny sunset temperature), %w(forecast)],
+    :stay_weather => [%w(weather rain sunny sunset humit mausam temperature), %w(forecast rainy)],
     :stay_wifi => [%w(internet wifi wi-fi wireless network password login credentials creds username net), %w(connect details )],
     :stay_directions => [%w(location oyo latitude longitude hotel maps), %w(route direction navigate nearest reach find )],
     :stay_doctor => [%w(doctor practo dentist surgeon hospital health appointment headache pain clinic labs fever sick diagnose), %w(book care checkup)],
-    :booking_details => [%w(booking stay checkin invoice), %w(detail book)]
+    :booking_details => [%w(booking stay checkin invoice), %w(book)]
   }
 
   def initialize()
