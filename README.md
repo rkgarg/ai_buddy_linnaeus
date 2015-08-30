@@ -1,6 +1,4 @@
-# Linnaeus [![Build Status](https://secure.travis-ci.org/djcp/linnaeus.png?branch=master)](http://travis-ci.org/djcp/linnaeus)
-
-![Carl Linnaeus](https://raw.github.com/djcp/linnaeus/master/images/linnaeus.jpg)
+# OI Buddy (Oyo AI Buddy) [![Build Status](https://secure.travis-ci.org/djcp/linnaeus.png?branch=master)](http://travis-ci.org/djcp/linnaeus)
 
 OI / AI Buddy.
 
