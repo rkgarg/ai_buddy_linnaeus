@@ -60,7 +60,7 @@ class OiBuddy
     syns = []
     syns.concat([keyword]*8)
 
-    resp = Net::HTTP.get(URI.parse(URI.encode("http://words.bighugelabs.com/api/2/c5bf29b078e8f26316be77aeab9203bd/"+keyword+"/json")))
+    resp = Net::HTTP.get(URI.parse(URI.encode("http://words.bighugelabs.com/api/2/28dfc9fa2e62f6710d013d7a68a57ecc/"+keyword+"/json")))
     begin
       resp = JSON.parse resp
     rescue=> e
