@@ -8,25 +8,27 @@ class OiBuddy
   attr_accessor :trainer, :classify
 
   CONTEXT_MAPS = {
-    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet bathroom tooth paste toothpaste manager luggage bell-boy ), %w(bring get service)],
-    :stay_emergency => [%w(police ambulance thief  doctor), %w(stole)],
-    :stay_laundry => [%w( laundry  clothes detergent shirt jeans), %w(clean wash )],
+    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(bring clean get service)],
+    :stay_emergency => [%w(police ambulance thief doctor), %w(steal)],
+    :stay_laundry => [%w( laundry clothes detergent shirt jeans), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
-    :stay_taxi => [%w( cab taxi ola uber tfs car), %w(order reach book)],
-    :stay_breakfast => [%w( breakfast lunch cornflakes menu bread butter food morning complimentary), %w(eat )],
+    :stay_taxi => [%w( cab taxi ola uber tfs car), %w(ride drop order reach book)],
+    :stay_breakfast => [%w( breakfast cornflakes menu bread butter food morning complimentary), %w(eat )],
     :stay_lunch_dinner => [%w(lunch menu dinner price), %w(eat)],
-    :stay_nearby_food => [%w(restaurant  zomato food  pizza continental chinese indian), %w(nearby outside order eat )],
-    :stay_nearby_travel => [%w( places  tourism   temples park mall), %w(nearby visit travel tourist historic)],
-    :stay_extend => [%w( booking extra ), %w(extend stay lengthen)],
+    :stay_nearby_food => [%w(restaurant  zomato food  pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
+    :stay_nearby_travel => [%w( places tourism airport temples park mall bank library museum zoo), %w(nearby visit travel tourist historic)],
+    # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
     :stay_money => [%w(amount money  wallet  price), %w(pay checkout)],
     :stay_weather => [%w(weather rain sunny sunset ), %w(forecast)],
-    :stay_wifi => [%w(internet wifi wi-fi wireless network password username), %w(connect )],
-    :stay_directions => [%w(location oyo latitude longitude maps), %w(route direction navigate nearest )]
+    :stay_wifi => [%w(internet wifi wi-fi wireless network password username net), %w(connect )],
+    :stay_directions => [%w(location oyo latitude longitude maps), %w(route direction navigate nearest )],
+    :stay_doctor => [%w(doctor practo dentist surgeon hospital appointment clinic labs fever diagnose), %w(book checkup)],
+    :booking_details => [%w(booking stay checkin checkout invoice), %w(detail book)]
   }
 
   def initialize()
-    self.trainer  = ::Linnaeus::Trainer.new(scope: "test3")    # Used to train documents
-    self.classify = ::Linnaeus::Classifier.new(scope: "test3")   # Used to classify documents
+    self.trainer  = ::Linnaeus::Trainer.new(scope: "test")    # Used to train documents
+    self.classify = ::Linnaeus::Classifier.new(scope: "test")   # Used to classify documents
   end
 
   def feed_data
@@ -56,10 +58,14 @@ class OiBuddy
 
   def weighted_synonyms keyword, is_verb
     syns = []
-    resp = Net::HTTP.get(URI.parse(URI.encode("http://words.bighugelabs.com/api/2/c5bf29b078e8f26316be77aeab9203bd/"+keyword+"/json")))
-    resp = JSON.parse resp rescue nil
+    syns.concat([keyword]*8)
 
-    puts resp
+    resp = Net::HTTP.get(URI.parse(URI.encode("http://words.bighugelabs.com/api/2/c5bf29b078e8f26316be77aeab9203bd/"+keyword+"/json")))
+    begin
+      resp = JSON.parse resp
+    rescue=> e
+      return syns
+    end
 
     #handle noun
     max = is_verb ? 2:5
@@ -73,7 +79,6 @@ class OiBuddy
       syns.concat(get_words_with_weights(v,3))
     end
 
-    syns.concat([keyword]*7)
     puts "synonms for #{keyword} => #{syns}"
     syns.flatten.uniq
   rescue => e
