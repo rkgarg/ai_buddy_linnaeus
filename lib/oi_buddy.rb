@@ -18,7 +18,7 @@ class OiBuddy
     :stay_nearby_food => [%w(restaurant zomato online food lunch dinner pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
     :stay_nearby_travel => [%w(places tourism airport temples park mall amusement park aquarium gallery saloon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
     # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
-    :stay_money => [%w(amount money wallet oyo points credits), %w(pay checkout)],
+    :stay_money => [%w(amount money wallet points credits), %w(pay checkout)],
     :stay_weather => [%w(weather rain sunny sunset humit mausam temperature), %w(forecast rainy)],
     :stay_wifi => [%w(internet wifi wi-fi wireless network password login credentials creds username net), %w(connect details )],
     :stay_directions => [%w(location oyo latitude longitude hotel maps), %w(route direction navigate nearest reach find )],
