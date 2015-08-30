@@ -8,7 +8,7 @@ class OiBuddy
   attr_accessor :trainer, :classify
 
   CONTEXT_MAPS = {
-    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet soap shaving shave toiletry bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean services get service)],
+    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet ice soap shaving shave toiletry bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean services get service)],
     :stay_emergency => [%w(police emergency fire ambulance thief doctor), %w(steal)],
     :stay_laundry => [%w( laundry clothes detergent shirt jeans dry clean), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
@@ -16,9 +16,9 @@ class OiBuddy
     :stay_breakfast => [%w(breakfast cornflakes menu bread butter food morning complimentary), %w(eat)],
     :stay_lunch_dinner => [%w(lunch menu dinner buffeet food hungry cafe), %w(eat order)],
     :stay_nearby_food => [%w(restaurant zomato online food lunch dinner pizza continental chinese indian hungry cafes desserts), %w(dining nearby outside delivery eat )],
-    :stay_nearby_travel => [%w(market bank atm barber multiplex places tourism metro railway college school university rail bus airport train station temples park mall amusement park aquarium gallery saloon salon movie bank library museum zoo), %w(nearby visit travel tourist historic)],
+    :stay_nearby_travel => [%w(market bank atm barber multiplex places tourism metro railway college school university rail bus airport train station temples park mall amusement park aquarium gallery saloon salon theater theatre movie bank library museum zoo), %w(nearby visit travel tourist historic)],
     # :stay_extend => [%w( booking extra), %w(extend stay lengthen)],
-    :stay_money => [%w(amount money wallet points credits), %w(pay checkout)],
+    :stay_money => [%w(amount money wallet balance points credits), %w(pay checkout)],
     :stay_weather => [%w(weather rain sunny sunset humit mausam temperature), %w(forecast rainy)],
     :stay_wifi => [%w(internet wifi wi-fi wireless network password login credentials creds username net working), %w(connect details )],
     :stay_directions => [%w(location oyo latitude longitude hotel maps), %w(route direction navigate nearest reach find )],
