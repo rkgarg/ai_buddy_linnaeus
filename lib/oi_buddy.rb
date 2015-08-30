@@ -8,7 +8,7 @@ class OiBuddy
   attr_accessor :trainer, :classify
 
   CONTEXT_MAPS = {
-    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(bring clean get service)],
+    :stay_room_service =>  [%w(room bedsheet linen fridge tv television towel toilet bathroom shower order tooth paste toothpaste manager luggage bell-boy roomservice room-service minibar), %w(need want bring clean get service)],
     :stay_emergency => [%w(police ambulance thief doctor), %w(steal)],
     :stay_laundry => [%w( laundry clothes detergent shirt jeans), %w(clean wash dirty stinky)],
     :stay_beverage => [%w(coffee tea  water beverage  milk juice), %w(order bring drinks)],
